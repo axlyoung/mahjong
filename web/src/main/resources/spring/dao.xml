@@ -4,73 +4,73 @@
 	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-			http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+			http://www.springframework.org/schema/beans/spring-beans.xsd
 			http://www.springframework.org/schema/aop 
-			http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+			http://www.springframework.org/schema/aop/spring-aop.xsd
 			http://www.springframework.org/schema/tx 
-			http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+			http://www.springframework.org/schema/tx/spring-tx.xsd
 			http://www.springframework.org/schema/mvc 
-			http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+			http://www.springframework.org/schema/mvc/spring-mvc.xsd
 			http://www.springframework.org/schema/context 
-			http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+			http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="weixinAccountDao" class="com.nbcb.weixinapi.dao.impl.WeixinAccountDaoImpl">
+	<bean id="weixinAccountDao" class="com.attic.bj.weixinapi.dao.impl.WeixinAccountDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 	</bean>
 
-	<bean id="weixinUserDao" class="com.nbcb.weixinapi.dao.impl.WeixinUserDaoImpl">
+	<bean id="weixinUserDao" class="com.attic.bj.weixinapi.dao.impl.WeixinUserDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
 	</bean>
 
-	<bean id="roomDao" class="com.nbcb.web.dao.impl.RoomDaoImpl">
+	<bean id="roomDao" class="com.attic.bj.web.dao.impl.RoomDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate">
 		</property>
 	</bean>
 
-	<bean id="gameDao" class="com.nbcb.web.dao.impl.GameDaoImpl">
+	<bean id="gameDao" class="com.attic.bj.web.dao.impl.GameDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate">
 		</property>
 	</bean>
 
 
-	<bean id="gameUserDao" class="com.nbcb.web.dao.impl.GameUserDaoImpl">
+	<bean id="gameUserDao" class="com.attic.bj.web.dao.impl.GameUserDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate">
 		</property>
 	</bean>
 
-	<bean id="gameAdviceDao" class="com.nbcb.web.dao.impl.GameAdviceDaoImpl">
+	<bean id="gameAdviceDao" class="com.attic.bj.web.dao.impl.GameAdviceDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate">
 		</property>
 	</bean>
 
-	<bean id="gameMoneyDetailDao" class="com.nbcb.web.dao.impl.GameMoneyDetailDaoImpl">
+	<bean id="gameMoneyDetailDao" class="com.attic.bj.web.dao.impl.GameMoneyDetailDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate">
 		</property>
 	</bean>
 
 	
-	<bean id="gameUserRoomDao" class="com.nbcb.web.dao.impl.GameUserRoomDaoImpl">
+	<bean id="gameUserRoomDao" class="com.attic.bj.web.dao.impl.GameUserRoomDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate">
 		</property>
 	</bean>
-	<bean id="gameActionDao" class="com.nbcb.web.dao.impl.GameActionDaoImpl">
+	<bean id="gameActionDao" class="com.attic.bj.web.dao.impl.GameActionDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate">
 		</property>
 	</bean>
 
 
-	<bean id="gameOrderDao" class="com.nbcb.web.dao.impl.GameOrderDaoImpl">
+	<bean id="gameOrderDao" class="com.attic.bj.web.dao.impl.GameOrderDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate">
 		</property>
 	</bean>
 	
 	
-	<bean id="gameDictDao" class="com.nbcb.web.dao.impl.GameDictDaoImpl">
+	<bean id="gameDictDao" class="com.attic.bj.web.dao.impl.GameDictDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate">
 		</property>
 	</bean>
 
-	<bean id="gameWinLoseDao" class="com.nbcb.web.dao.impl.GameWinLoseDaoImpl">
+	<bean id="gameWinLoseDao" class="com.attic.bj.web.dao.impl.GameWinLoseDaoImpl">
 		<property name="sqlSessionTemplate" ref="sqlSessionTemplate">
 		</property>
 	</bean>

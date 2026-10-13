@@ -1,5 +1,5 @@
 url=jdbc:mysql://127.0.0.1:3306/game?useUnicode=true&autoReconnect=true
-driver=com.mysql.jdbc.Driver
+driver=com.mysql.cj.jdbc.Driver
 username=game
 password=game
 maxActive=20   

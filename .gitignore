@@ -4,3 +4,5 @@
 .classpath
 .settings
 /build
+/webstatic/web/grunt/node_modules/
+/webstatic/web/grunt/build/

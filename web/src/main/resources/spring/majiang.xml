@@ -6,7 +6,7 @@
 
 
 
-	<bean id="ningboMajiangChannel" class="com.nbcb.majiang.ningbo.NingboMajiangChannel">
+	<bean id="ningboMajiangChannel" class="com.attic.bj.majiang.ningbo.NingboMajiangChannel">
 		<property name="server" ref="gameServer">
 		</property>
 		<property name="fourBaidaRule" ref="ningbo4baidaMajiangRule">
@@ -18,7 +18,7 @@
 	</bean>
 
 
-	<bean id="majiangAllCardsOfFull" class="com.nbcb.majiang.card.MajiangAllCards"
+	<bean id="majiangAllCardsOfFull" class="com.attic.bj.majiang.card.MajiangAllCards"
 		init-method="start" scope="prototype">
 	</bean>
 
@@ -26,7 +26,7 @@
 
 
 
-	<bean id="ningboMajiangRule" class="com.nbcb.majiang.rule.MajiangRule">
+	<bean id="ningboMajiangRule" class="com.attic.bj.majiang.rule.MajiangRule">
 		<property name="actionExecutorMapping" ref="defaultActionExecutorMapping" />
 		<property name="actionCalculatorMapping" ref="defaultActionCalculatorMapping" />
 		<property name="actionNotify" ref="actionNotify" />
@@ -34,7 +34,7 @@
 
 
 	<!-- action 监听器 -->
-	<bean id="actionNotify" class="com.nbcb.core.action.ActionNotifySupport">
+	<bean id="actionNotify" class="com.attic.bj.core.action.ActionNotifySupport">
 		<property name="actionListeners">
 			<list>
 				<ref bean="consoleDisplayActionListener" />
@@ -45,16 +45,16 @@
 		</property>
 	</bean>
 	<bean id="consoleDisplayActionListener"
-		class="com.nbcb.majiang.actionlistener.ConsoleDisplayActionListener">
+		class="com.attic.bj.majiang.actionlistener.ConsoleDisplayActionListener">
 	</bean>
 	<bean id="majiangCardValidateActionListener"
-		class="com.nbcb.majiang.actionlistener.MajiangCardValidateActionListener">
+		class="com.attic.bj.majiang.actionlistener.MajiangCardValidateActionListener">
 	</bean>
-	<bean id="webSocketNotifyActionListener" class="com.nbcb.web.websocket.WebSocketNotifyActionListener">
+	<bean id="webSocketNotifyActionListener" class="com.attic.bj.web.websocket.WebSocketNotifyActionListener">
 		<property name="userOutputApi" ref="userOutputApi">
 		</property>
 	</bean>
-	<bean id="databaseActionListener" class="com.nbcb.web.db.DatabaseActionListener">
+	<bean id="databaseActionListener" class="com.attic.bj.web.db.DatabaseActionListener">
 		<property name="gameDao" ref="gameDao">
 		</property>
 		<property name="moneyStrategyService" ref="moneyStrategyService">
@@ -73,17 +73,17 @@
 
 
 
-	<bean id="majiangThreeActiveBao" class="com.nbcb.majiang.rule.judger.hu.MajiangThreeActiveBao">
+	<bean id="majiangThreeActiveBao" class="com.attic.bj.majiang.rule.judger.hu.MajiangThreeActiveBao">
 	</bean>
-	<bean id="majiangFourActiveBao" class="com.nbcb.majiang.rule.judger.hu.MajiangThreeActiveBao">
+	<bean id="majiangFourActiveBao" class="com.attic.bj.majiang.rule.judger.hu.MajiangThreeActiveBao">
 		<property name="times" value="4" />
 	</bean>
-	<bean id="majiangThreePassiveBao" class="com.nbcb.majiang.rule.judger.hu.MajiangThreePassiveBao">
+	<bean id="majiangThreePassiveBao" class="com.attic.bj.majiang.rule.judger.hu.MajiangThreePassiveBao">
 		<property name="majiangThreeActiveBao" ref="majiangThreeActiveBao">
 		</property>
 	</bean>
 	<bean id="majiangThreeBao"
-		class="com.nbcb.majiang.rule.judger.hu.MajiangThreeBaoCalculator">
+		class="com.attic.bj.majiang.rule.judger.hu.MajiangThreeBaoCalculator">
 		<property name="majiangThreeActiveBaoCalculator" ref="majiangThreeActiveBao">
 		</property>
 		<property name="majiangThreePassiveBaoCalculator" ref="majiangThreePassiveBao">

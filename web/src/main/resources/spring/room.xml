@@ -5,7 +5,7 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="gameServer" class="com.nbcb.core.server.DefaultServer">
+	<bean id="gameServer" class="com.attic.bj.core.server.DefaultServer">
 		<property name="mapChannel">
 			<map>
 				<entry key="ningboMajiang" value-ref="ningboMajiangChannel" />
@@ -28,13 +28,13 @@
 	</bean>
 
 	<!-- room 监听器 -->
-	<bean id="printRoomListener" class="com.nbcb.core.room.PrintRoomListener">
+	<bean id="printRoomListener" class="com.attic.bj.core.room.PrintRoomListener">
 	</bean>
-	<bean id="webSocketNotifyRoomListener" class="com.nbcb.web.websocket.WebSocketNotifyRoomListener">
+	<bean id="webSocketNotifyRoomListener" class="com.attic.bj.web.websocket.WebSocketNotifyRoomListener">
 		<property name="userOutputApi" ref="userOutputApi">
 		</property>
 	</bean>
-	<bean id="databaseRoomListener" class="com.nbcb.web.db.DatabaseRoomListener">
+	<bean id="databaseRoomListener" class="com.attic.bj.web.db.DatabaseRoomListener">
 		<property name="roomDao" ref="roomDao">
 		</property>
 		<property name="gameUserRoomDao" ref="gameUserRoomDao">
@@ -47,11 +47,11 @@
 
 
 
-	<bean id="playerStatQuery" class="com.nbcb.core.server.DefaultPlayerStatQuery">
+	<bean id="playerStatQuery" class="com.attic.bj.core.server.DefaultPlayerStatQuery">
 		<property name="server" ref="gameServer"></property>
 	</bean>
 
-	<bean id="mapRoomStopJudger" class="com.nbcb.core.room.MapRoomStopJudger">
+	<bean id="mapRoomStopJudger" class="com.attic.bj.core.room.MapRoomStopJudger">
 		<property name="juShuRoomStopJudger" ref="jushuRoomStopJudger"></property>
 		<property name="mapRoomStopjudger">
 			<map>
@@ -59,17 +59,17 @@
 			</map>
 		</property>
 	</bean>
-	<bean id="jushuRoomStopJudger" class="com.nbcb.core.room.JushuRoomStopJudger">
+	<bean id="jushuRoomStopJudger" class="com.attic.bj.core.room.JushuRoomStopJudger">
 	</bean>
 
 
 
 
-	<bean id="emptyActionExecutor" class="com.nbcb.core.rule.EmptyActionExecutor">
+	<bean id="emptyActionExecutor" class="com.attic.bj.core.rule.EmptyActionExecutor">
 	</bean>
-	<bean id="emptyActionCalculator" class="com.nbcb.core.rule.EmptyActionCalculator">
+	<bean id="emptyActionCalculator" class="com.attic.bj.core.rule.EmptyActionCalculator">
 	</bean>
-	<bean id="emptyActionJudger" class="com.nbcb.core.rule.EmptyActionJudger">
+	<bean id="emptyActionJudger" class="com.attic.bj.core.rule.EmptyActionJudger">
 	</bean>
 
 

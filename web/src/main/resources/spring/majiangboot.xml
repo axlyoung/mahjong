@@ -5,7 +5,7 @@
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="gameServer" class="com.nbcb.core.server.DefaultServer">
+	<bean id="gameServer" class="com.attic.bj.core.server.DefaultServer">
 		<property name="mapChannel">
 			<map>
 				<entry key="ningboMajiang" value-ref="ningboMajiangChannel" />
@@ -21,10 +21,10 @@
 	</bean>
 
 
-	<bean id="playerStatQuery" class="com.nbcb.core.server.DefaultPlayerStatQuery">
+	<bean id="playerStatQuery" class="com.attic.bj.core.server.DefaultPlayerStatQuery">
 		<property name="server" ref="gameServer"></property>
 	</bean>
-	<bean id="ningboMajiangChannel" class="com.nbcb.majiang.ningbo.NingboMajiangChannel">
+	<bean id="ningboMajiangChannel" class="com.attic.bj.majiang.ningbo.NingboMajiangChannel">
 		<property name="server" ref="gameServer">
 		</property>
 		<property name="fourBaidaRule" ref="ningbo4baidaMajiangRule">
@@ -41,13 +41,13 @@
 
 
 	<!-- room 监听器 -->
-	<bean id="printRoomListener" class="com.nbcb.core.room.PrintRoomListener">
+	<bean id="printRoomListener" class="com.attic.bj.core.room.PrintRoomListener">
 	</bean>
-	<bean id="webSocketNotifyRoomListener" class="com.nbcb.web.websocket.WebSocketNotifyRoomListener">
+	<bean id="webSocketNotifyRoomListener" class="com.attic.bj.web.websocket.WebSocketNotifyRoomListener">
 		<property name="userOutputApi" ref="userOutputApi">
 		</property>
 	</bean>
-	<!-- <bean id="databaseRoomListener" class="com.nbcb.web.db.DatabaseRoomListener"> -->
+	<!-- <bean id="databaseRoomListener" class="com.attic.bj.web.db.DatabaseRoomListener"> -->
 	<!-- <property name="roomDao" ref="roomDao"> -->
 	<!-- </property> -->
 	<!-- <property name="gameUserDao" ref="gameUserDao"> -->
@@ -66,7 +66,7 @@
 
 
 
-	<bean id="majiangAllCardsOfFull" class="com.nbcb.majiang.card.MajiangAllCards"
+	<bean id="majiangAllCardsOfFull" class="com.attic.bj.majiang.card.MajiangAllCards"
 		init-method="start" scope="prototype">
 		<property name="lessColor">
 			<value>false</value>
@@ -74,7 +74,7 @@
 	</bean>
 
 
-	<bean id="majiangAllCardsOfLessColor" class="com.nbcb.majiang.card.MajiangAllCards"
+	<bean id="majiangAllCardsOfLessColor" class="com.attic.bj.majiang.card.MajiangAllCards"
 		init-method="start" scope="prototype">
 		<property name="lessColor">
 			<value>true</value>
@@ -83,7 +83,7 @@
 
 
 
-	<bean id="ningboMajiangRule" class="com.nbcb.majiang.rule.MajiangRule">
+	<bean id="ningboMajiangRule" class="com.attic.bj.majiang.rule.MajiangRule">
 		<property name="actionExecutorMapping" ref="defaultActionExecutorMapping" />
 		<property name="actionCalculatorMapping" ref="defaultActionCalculatorMapping" />
 		<property name="actionNotify" ref="actionNotify" />
@@ -91,7 +91,7 @@
 
 
 	<!-- action 监听器 -->
-	<bean id="actionNotify" class="com.nbcb.core.action.ActionNotifySupport">
+	<bean id="actionNotify" class="com.attic.bj.core.action.ActionNotifySupport">
 		<property name="actionListeners">
 			<list>
 				<ref bean="consoleDisplayActionListener" />
@@ -102,26 +102,26 @@
 		</property>
 	</bean>
 	<bean id="consoleDisplayActionListener"
-		class="com.nbcb.majiang.actionlistener.ConsoleDisplayActionListener">
+		class="com.attic.bj.majiang.actionlistener.ConsoleDisplayActionListener">
 	</bean>
 	<bean id="majiangCardValidateActionListener"
-		class="com.nbcb.majiang.actionlistener.MajiangCardValidateActionListener">
+		class="com.attic.bj.majiang.actionlistener.MajiangCardValidateActionListener">
 	</bean>
-	<bean id="webSocketNotifyActionListener" class="com.nbcb.web.websocket.WebSocketNotifyActionListener">
+	<bean id="webSocketNotifyActionListener" class="com.attic.bj.web.websocket.WebSocketNotifyActionListener">
 		<property name="userOutputApi" ref="userOutputApi">
 		</property>
 	</bean>
-	<bean id="userOutputApi" class="com.nbcb.web.service.impl.DefaultUserOutputApi">
+	<bean id="userOutputApi" class="com.attic.bj.web.service.impl.DefaultUserOutputApi">
 		<property name="responseFilter" ref="responseFilter">
 		</property>
 		<property name="clientPusher" ref="clientPusher"></property>
 		<property name="server" ref="gameServer"></property>
 		<property name="playerStatQuery" ref="playerStatQuery"></property>
 	</bean>
-	<bean id="clientPusher" class="com.nbcb.web.service.impl.ConsolePrintClientPusher">
+	<bean id="clientPusher" class="com.attic.bj.web.service.impl.ConsolePrintClientPusher">
 	</bean>
 
-	<!-- <bean id="databaseActionListener" class="com.nbcb.web.db.DatabaseActionListener"> -->
+	<!-- <bean id="databaseActionListener" class="com.attic.bj.web.db.DatabaseActionListener"> -->
 	<!-- <property name="gameDao" ref="gameDao"> -->
 	<!-- </property> -->
 	<!-- <property name="moneyStrategyService" ref="moneyStrategyService"> -->
@@ -136,23 +136,23 @@
 
 
 
-	<bean id="majiangThreeActiveBao" class="com.nbcb.majiang.rule.judger.hu.MajiangThreeActiveBao">
+	<bean id="majiangThreeActiveBao" class="com.attic.bj.majiang.rule.judger.hu.MajiangThreeActiveBao">
 	</bean>
 
-	<bean id="majiangThreePassiveBao" class="com.nbcb.majiang.rule.judger.hu.MajiangThreePassiveBao">
+	<bean id="majiangThreePassiveBao" class="com.attic.bj.majiang.rule.judger.hu.MajiangThreePassiveBao">
 		<property name="majiangThreeActiveBao" ref="majiangThreeActiveBao">
 		</property>
 	</bean>
 
 	<bean id="majiangThreeBao"
-		class="com.nbcb.majiang.rule.judger.hu.MajiangThreeBaoCalculator">
+		class="com.attic.bj.majiang.rule.judger.hu.MajiangThreeBaoCalculator">
 		<property name="majiangThreeActiveBaoCalculator" ref="majiangThreeActiveBao">
 		</property>
 		<property name="majiangThreePassiveBaoCalculator" ref="majiangThreePassiveBao">
 		</property>
 	</bean>
 
-	<bean id="responseFilter" class="com.nbcb.web.service.impl.DevDefaultResponseFilter">
+	<bean id="responseFilter" class="com.attic.bj.web.service.impl.DevDefaultResponseFilter">
 <!-- 		<property name="appid" value="${appid}"></property> -->
 <!-- 		<property name="weixinUserDao" ref="weixinUserDao"></property> -->
 <!-- 		<property name="gameUserDao" ref="gameUserDao"></property> -->

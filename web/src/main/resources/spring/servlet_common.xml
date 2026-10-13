@@ -5,21 +5,21 @@
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:websocket="http://www.springframework.org/schema/websocket"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-			http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+			http://www.springframework.org/schema/beans/spring-beans.xsd
 			http://www.springframework.org/schema/context 
-			http://www.springframework.org/schema/context/spring-context-4.0.xsd
+			http://www.springframework.org/schema/context/spring-context.xsd
 			http://www.springframework.org/schema/aop 
-			http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+			http://www.springframework.org/schema/aop/spring-aop.xsd
 			http://www.springframework.org/schema/tx 
-			http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+			http://www.springframework.org/schema/tx/spring-tx.xsd
 			http://www.springframework.org/schema/mvc 
-			http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+			http://www.springframework.org/schema/mvc/spring-mvc.xsd
 			http://www.springframework.org/schema/context 
-			http://www.springframework.org/schema/context/spring-context-4.0.xsd
+			http://www.springframework.org/schema/context/spring-context.xsd
 			http://www.springframework.org/schema/websocket
             http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 	<!-- 使Spring支持自动检测组件，如注解的Controller -->
-	<context:component-scan base-package="com.nbcb.web.*" />
+	<context:component-scan base-package="com.attic.bj.web.*" />
 
 
 
@@ -30,7 +30,7 @@
 
 
 	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<property name="messageConverters">
 			<list>
 				<ref bean="stringConverter" />
@@ -48,19 +48,15 @@
 		</property>
 	</bean>
 	<bean id="jsonConverter"
-		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
-	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="messageConverters">
-			<list>
-				<ref bean="stringConverter" />
-				<ref bean="jsonConverter" />
-			</list>
-		</property>
+		class="org.springframework.http.converter.json.JacksonJsonHttpMessageConverter">
+		<constructor-arg>
+			<bean class="tools.jackson.databind.json.JsonMapper"
+				factory-method="builderWithJackson2Defaults" />
+		</constructor-arg>
 	</bean>
 
 
-	<bean id="exceptionResolver" class="com.nbcb.web.exceptionhandler.DefaultExceptionHandler" />
+	<bean id="exceptionResolver" class="com.attic.bj.web.exceptionhandler.DefaultExceptionHandler" />
 
 
 

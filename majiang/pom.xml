@@ -3,12 +3,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>com.nbcb</groupId>
+		<groupId>com.attic.bj</groupId>
 		<artifactId>game</artifactId>
 		<version>1.0</version>
 	</parent>
 
-	<groupId>com.nbcb</groupId>
+	<groupId>com.attic.bj</groupId>
 	<artifactId>majiang</artifactId>
 	<packaging>jar</packaging>
 	<version>1.0</version>
@@ -16,12 +16,12 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.nbcb</groupId>
+			<groupId>com.attic.bj</groupId>
 			<artifactId>core</artifactId>
 			<version>1.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.nbcb</groupId>
+			<groupId>com.attic.bj</groupId>
 			<artifactId>common</artifactId>
 			<version>1.0</version>
 		</dependency>

@@ -3,22 +3,22 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="weixinAccount">
-	<select id="findAll" resultType="com.nbcb.weixinapi.entity.WeixinAccount">
+	<select id="findAll" resultType="com.attic.bj.weixinapi.entity.WeixinAccount">
 		select * from wx_account
 	</select>
 
-	<select id="selectWeixinAccountByAppidForUpdate" resultType="com.nbcb.weixinapi.entity.WeixinAccount">
+	<select id="selectWeixinAccountByAppidForUpdate" resultType="com.attic.bj.weixinapi.entity.WeixinAccount">
 		select * from wx_account where appid=#{appid} for update
 	</select>
 
-	<update id="updateAccessTokenByAppid" parameterType="com.nbcb.weixinapi.entity.WeixinAccount">
+	<update id="updateAccessTokenByAppid" parameterType="com.attic.bj.weixinapi.entity.WeixinAccount">
 		update
 		wx_account set access_token =#{access_token}
 		,token_expire_time
 		=#{token_expire_time} where appid =#{appid}
 	</update>
 
-	<update id="updateTicketByAppid" parameterType="com.nbcb.weixinapi.entity.WeixinAccount">
+	<update id="updateTicketByAppid" parameterType="com.attic.bj.weixinapi.entity.WeixinAccount">
 		update
 		wx_account
 		set ticket =#{ticket}

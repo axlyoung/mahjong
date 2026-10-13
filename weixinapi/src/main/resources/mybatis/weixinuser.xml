@@ -3,8 +3,8 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="weixinUser">
-	<select id="selectUserByOpenid" resultType="com.nbcb.weixinapi.entity.WeixinReplyUser"
-		parameterType="com.nbcb.weixinapi.entity.WeixinReplyUser">
+	<select id="selectUserByOpenid" resultType="com.attic.bj.weixinapi.entity.WeixinReplyUser"
+		parameterType="com.attic.bj.weixinapi.entity.WeixinReplyUser">
 		select appid ,
 		subscribe ,
 		openid ,
@@ -22,13 +22,13 @@
 		openid=#{openid}
 	</select>
 
-	<update id="updateUserSubscribeByOpenid" parameterType="com.nbcb.weixinapi.entity.WeixinReplyUser">
+	<update id="updateUserSubscribeByOpenid" parameterType="com.attic.bj.weixinapi.entity.WeixinReplyUser">
 		update
 		wx_user set subscribe = #{subscribe} where appid = #{appid} and
 		openid=#{openid}
 	</update>
 
-	<update id="updateUserByOpenid" parameterType="com.nbcb.weixinapi.entity.WeixinReplyUser">
+	<update id="updateUserByOpenid" parameterType="com.attic.bj.weixinapi.entity.WeixinReplyUser">
 		update wx_user set
 		appid =#{appid},
 		subscribe =#{subscribe},
@@ -48,7 +48,7 @@
 		openid=#{openid}
 	</update>
 
-	<insert id="insertUser" parameterType="com.nbcb.weixinapi.entity.WeixinReplyUser">
+	<insert id="insertUser" parameterType="com.attic.bj.weixinapi.entity.WeixinReplyUser">
 		insert into wx_user(
 		appid,
 		subscribe ,

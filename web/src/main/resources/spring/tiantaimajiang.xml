@@ -6,12 +6,12 @@
 
 
 
-	<bean id="tiantaiMajiangChannel" class="com.nbcb.majiang.tiantai.TiantaiMajiangChannel">
+	<bean id="tiantaiMajiangChannel" class="com.attic.bj.majiang.tiantai.TiantaiMajiangChannel">
 		<property name="majiangRule" ref="tiantaiMajiangRule" />
 		<property name="server" ref="gameServer" />
 	</bean>
 
-	<bean id="tiantaiMajiangRule" class="com.nbcb.majiang.rule.MajiangRule">
+	<bean id="tiantaiMajiangRule" class="com.attic.bj.majiang.rule.MajiangRule">
 		<property name="roomStopJudger" ref="jushuRoomStopJudger"></property>
 		<property name="actionExecutorMapping" ref="tiantaiMajiangActionExecutorMapping" />
 		<property name="actionCalculatorMapping" ref="tiantaiMajiangActionCalculatorMapping" />
@@ -20,18 +20,18 @@
 
 
 	<bean id="tiantaiMajiangAllocateActionExecutor"
-		class="com.nbcb.majiang.tiantai.TiantaiMajiangAllocateActionExecutor">
+		class="com.attic.bj.majiang.tiantai.TiantaiMajiangAllocateActionExecutor">
 	</bean>
 
 	<bean id="tiantaiMajiangCompleteActionExecutor"
-		class="com.nbcb.majiang.rule.executor.MajiangCompleteActionExecutor">
+		class="com.attic.bj.majiang.rule.executor.MajiangCompleteActionExecutor">
 		<property name="scoreComputer" ref="tiantaiMajiangScoreComputer"></property>
 	</bean>
-	<bean id="tiantaiMajiangScoreComputer" class="com.nbcb.majiang.tiantai.TiantaiMajiangScoreComputer">
+	<bean id="tiantaiMajiangScoreComputer" class="com.attic.bj.majiang.tiantai.TiantaiMajiangScoreComputer">
 	</bean>
 
 
-	<bean id="tiantaiMajiangActionExecutorMapping" class="com.nbcb.core.rule.DefaultActionExecutorMapping">
+	<bean id="tiantaiMajiangActionExecutorMapping" class="com.attic.bj.core.rule.DefaultActionExecutorMapping">
 		<property name="actionExecutors">
 			<list>
 				<ref bean="emptyMajiangActionExecutor" />
@@ -64,24 +64,24 @@
 
 
 	<bean id="tiantaiMajiangFangQiangHuActionJudger"
-		class="com.nbcb.majiang.rule.judger.MajiangFangQiangQiangGangHuActionJudger">
+		class="com.attic.bj.majiang.rule.judger.MajiangFangQiangQiangGangHuActionJudger">
 		<property name="huStrategy" ref="tiantaiMajiangHuStrategy"></property>
 		<property name="fangQiang" value="true"></property>
 	</bean>
 	<bean id="tiantaiMajiangQiangGangHuActionJudger"
-		class="com.nbcb.majiang.rule.judger.MajiangFangQiangQiangGangHuActionJudger">
+		class="com.attic.bj.majiang.rule.judger.MajiangFangQiangQiangGangHuActionJudger">
 		<property name="huStrategy" ref="tiantaiMajiangHuStrategy"></property>
 		<property name="fangQiang" value="false"></property>
 	</bean>
-	<bean id="tiantaiMajiangMoFrontHuActionJudger" class="com.nbcb.majiang.rule.judger.MajiangMoHuActionJudger">
+	<bean id="tiantaiMajiangMoFrontHuActionJudger" class="com.attic.bj.majiang.rule.judger.MajiangMoHuActionJudger">
 		<property name="huStrategy" ref="tiantaiMajiangHuStrategy"></property>
 		<property name="moFront" value="true"></property>
 	</bean>
-	<bean id="tiantaiMajiangMoBackHuActionJudger" class="com.nbcb.majiang.rule.judger.MajiangMoHuActionJudger">
+	<bean id="tiantaiMajiangMoBackHuActionJudger" class="com.attic.bj.majiang.rule.judger.MajiangMoHuActionJudger">
 		<property name="huStrategy" ref="tiantaiMajiangHuStrategy"></property>
 		<property name="moFront" value="false"></property>
 	</bean>
-	<bean id="tiantaiMajiangHuStrategy" class="com.nbcb.majiang.tiantai.TiantaiMajiangHuStrategy">
+	<bean id="tiantaiMajiangHuStrategy" class="com.attic.bj.majiang.tiantai.TiantaiMajiangHuStrategy">
 		<property name="nonThreeTwoMajiangHuFinders">
 			<list>
 				<ref bean="sibaidaMajiangHuFinder" />
@@ -112,31 +112,31 @@
 
 
 	<bean id="tiantaiMajiangDaNonHuaActionCalculator"
-		class="com.nbcb.majiang.rule.calculator.MajiangDaNonHuaActionCalculator">
+		class="com.attic.bj.majiang.rule.calculator.MajiangDaNonHuaActionCalculator">
 		<property name="mingGangActionJudger" ref="mingGangActionJudger" />
 		<property name="pengActionJudger" ref="pengActionJudger" />
 		<property name="fangQiangHuActionJudger" ref="tiantaiMajiangFangQiangHuActionJudger" />
 	</bean>
 	<bean id="tiantaiMajiangMoFrontActionCalculator"
-		class="com.nbcb.majiang.rule.calculator.MajiangMoFrontActionCalculator">
+		class="com.attic.bj.majiang.rule.calculator.MajiangMoFrontActionCalculator">
 		<property name="huActionJudger" ref="tiantaiMajiangMoFrontHuActionJudger" />
 		<property name="anGangActionJudger" ref="anGangActionJudger" />
 		<property name="xianGangActionJudger" ref="xianGangActionJudger" />
 	</bean>
 	<bean id="tiantaiMajiangMoBackActionCalculator"
-		class="com.nbcb.majiang.rule.calculator.MajiangMoBackActionCalculator">
+		class="com.attic.bj.majiang.rule.calculator.MajiangMoBackActionCalculator">
 		<property name="anGangActionJudger" ref="anGangActionJudger" />
 		<property name="xianGangActionJudger" ref="xianGangActionJudger" />
 		<property name="huActionJudger" ref="tiantaiMajiangMoBackHuActionJudger" />
 	</bean>
 	<bean id="tiantaiMajiangXianGangActionCalculator"
-		class="com.nbcb.majiang.rule.calculator.MajiangXianGangActionCalculator">
+		class="com.attic.bj.majiang.rule.calculator.MajiangXianGangActionCalculator">
 		<property name="qiangGangHu" ref="tiantaiMajiangQiangGangHuActionJudger" />
 	</bean>
 
 
 
-	<bean id="tiantaiMajiangActionCalculatorMapping" class="com.nbcb.core.rule.DefaultActionCalculatorMapping">
+	<bean id="tiantaiMajiangActionCalculatorMapping" class="com.attic.bj.core.rule.DefaultActionCalculatorMapping">
 		<property name="actionCalculators">
 			<list>
 				<ref bean="emptyMajiangActionCalculator" />

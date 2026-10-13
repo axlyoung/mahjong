@@ -5,17 +5,17 @@
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:task="http://www.springframework.org/schema/task"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-			http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+			http://www.springframework.org/schema/beans/spring-beans.xsd
 			http://www.springframework.org/schema/aop 
-			http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+			http://www.springframework.org/schema/aop/spring-aop.xsd
 			http://www.springframework.org/schema/tx 
-			http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+			http://www.springframework.org/schema/tx/spring-tx.xsd
 			http://www.springframework.org/schema/mvc 
-			http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+			http://www.springframework.org/schema/mvc/spring-mvc.xsd
 			http://www.springframework.org/schema/task 
        		http://www.springframework.org/schema/task/spring-task.xsd
 			http://www.springframework.org/schema/context 
-			http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+			http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<import resource="room.xml" />
 	<import resource="majiang.xml" />
@@ -51,7 +51,7 @@
 	<!-- org.springframework.beans.factory.config.PropertyPlaceholderConfigurer -->
 	<beans profile="default">
 		<bean id="propertyConfigurer"
-			class="com.nbcb.web.spring.extend.CustomizedPropertyConfigurer">
+			class="com.attic.bj.web.spring.extend.CustomizedPropertyConfigurer">
 			<property name="location">
 				<value>classpath:config/dev.property</value>
 			</property>
@@ -59,7 +59,7 @@
 	</beans>
 	<beans profile="test">
 		<bean id="propertyConfigurer"
-			class="com.nbcb.web.spring.extend.CustomizedPropertyConfigurer">
+			class="com.attic.bj.web.spring.extend.CustomizedPropertyConfigurer">
 			<property name="location">
 				<value>classpath:config/test.property</value>
 			</property>
@@ -67,7 +67,7 @@
 	</beans>
 	<beans profile="prod">
 		<bean id="propertyConfigurer"
-			class="com.nbcb.web.spring.extend.CustomizedPropertyConfigurer">
+			class="com.attic.bj.web.spring.extend.CustomizedPropertyConfigurer">
 			<property name="location">
 				<value>classpath:config/prod.property</value>
 			</property>

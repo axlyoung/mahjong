@@ -4,20 +4,20 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean id="guangdongMajiangChannel" class="com.nbcb.majiang.guangdong.GuangdongMajiangChannel">
+	<bean id="guangdongMajiangChannel" class="com.attic.bj.majiang.guangdong.GuangdongMajiangChannel">
 		<property name="majiangRule" ref="guangdongMajiangRule" />
 		<property name="server" ref="gameServer" />
 	</bean>
 
 	<bean id="guangdongMajiangCardValidateActionListener"
-		class="com.nbcb.majiang.guangdong.GuangdongMajiangCardValidateActionListener">
+		class="com.attic.bj.majiang.guangdong.GuangdongMajiangCardValidateActionListener">
 	</bean>
 
 
 
 
 	<!-- action 监听器 -->
-	<bean id="guangdongMajiangActionNotify" class="com.nbcb.core.action.ActionNotifySupport">
+	<bean id="guangdongMajiangActionNotify" class="com.attic.bj.core.action.ActionNotifySupport">
 		<property name="actionListeners">
 			<list>
 				<ref bean="consoleDisplayActionListener" />
@@ -28,7 +28,7 @@
 		</property>
 	</bean>
 
-	<bean id="guangdongMajiangRule" class="com.nbcb.majiang.rule.MajiangRule">
+	<bean id="guangdongMajiangRule" class="com.attic.bj.majiang.rule.MajiangRule">
 		<property name="roomStopJudger" ref="jushuRoomStopJudger"></property>
 		<property name="actionExecutorMapping" ref="guangdongMajiangActionExecutorMapping" />
 		<property name="actionCalculatorMapping" ref="guangdongMajiangActionCalculatorMapping" />
@@ -38,13 +38,13 @@
 
 
 	<bean id="guangdongMajiangAllocateActionExecutor"
-		class="com.nbcb.majiang.guangdong.GuangdongMajiangAllocateActionExecutor">
+		class="com.attic.bj.majiang.guangdong.GuangdongMajiangAllocateActionExecutor">
 	</bean>
 
 	<bean id="guangdongMajiangMaimaActionExecutor"
-	class="com.nbcb.majiang.guangdong.GuangdongMajiangMaimaActionExecutor">
+	class="com.attic.bj.majiang.guangdong.GuangdongMajiangMaimaActionExecutor">
 	</bean>
-	<bean id="guangdongMajiangActionExecutorMapping" class="com.nbcb.core.rule.DefaultActionExecutorMapping">
+	<bean id="guangdongMajiangActionExecutorMapping" class="com.attic.bj.core.rule.DefaultActionExecutorMapping">
 		<property name="actionExecutors">
 			<list>
 				<ref bean="emptyMajiangActionExecutor" />
@@ -73,7 +73,7 @@
 
 
 
-	<bean id="guangdongMajiangActionCalculatorMapping" class="com.nbcb.core.rule.DefaultActionCalculatorMapping">
+	<bean id="guangdongMajiangActionCalculatorMapping" class="com.attic.bj.core.rule.DefaultActionCalculatorMapping">
 		<property name="actionCalculators">
 			<list>
 				<ref bean="emptyMajiangActionCalculator" />

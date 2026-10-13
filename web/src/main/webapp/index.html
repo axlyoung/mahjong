@@ -1,36 +1,25 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-<title>majiang</title>
 <meta charset="UTF-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="renderer" content="webkit">
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麻将 - 开发登录</title>
+<style>
+	body { font-family: -apple-system, "PingFang SC", sans-serif; max-width: 420px; margin: 40px auto; padding: 0 16px; }
+	a { display: block; margin: 10px 0; padding: 12px; border: 1px solid #ccc; border-radius: 6px; text-decoration: none; color: #333; text-align: center; }
+	p { color: #888; font-size: 14px; }
+</style>
 </head>
 <body>
-	<script src="app/demo.js"></script>
-	<script src="app/world.js"></script>
-	<script src="app/spirit.js"></script>
-	<script src="app/spiritmiddle.js"></script>
-	<script src="app/spiritbackground.js"></script>
-	<script src="app/spirituser.js"></script>
-	<script src="app/spiritbaida.js"></script>
-	<script src="app/spiritleft.js"></script>
-	<script src="app/spiritcards0.js"></script>
-	<script src="app/spiritcards1.js"></script>
-	<script src="app/spiritcards2.js"></script>
-	<script src="app/spiritcards3.js"></script>
-	<script src="app/spiritinputaction.js"></script>
-	<script src="app/spiritshowaction.js"></script>
-	<script src="app/imagemanager.js"></script>
-	<script src="app/websocket.js"></script>
-	<style type="text/css">
-	body {
-		display: block;
-		margin: 0px;
-	}
-	</style>
-	<canvas id="canvas"></canvas>
+	<h2>开发环境登录</h2>
+	<p>dev 模式不走微信授权，code 即用户账号，首次登录自动建用户。多开浏览器用不同账号即可凑桌。</p>
+	<div id="users"></div>
+	<script>
+		var html = '';
+		for (var i = 0; i < 6; i++) {
+			html += '<a href="/web/home.do?code=player' + i + '">player' + i + '</a>';
+		}
+		document.getElementById('users').innerHTML = html;
+	</script>
 </body>
 </html>

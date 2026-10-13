@@ -1,5 +1,5 @@
 url=jdbc:mysql://rm-bp1z0gqnfi9067c0j.mysql.rds.aliyuncs.com:3306/game1?useUnicode=true&autoReconnect=true
-driver=com.mysql.jdbc.Driver
+driver=com.mysql.cj.jdbc.Driver
 username=game1
 password=game1
 maxActive=20

@@ -67,6 +67,7 @@ module.exports = function(grunt){
 			    files: [
 			      {expand: true,cwd:'src/',src: ['resources/**'], dest: 'build/',filter: 'isFile'},
 			      {expand: true,cwd:'src/',src: ['image/*'], dest: 'build/'},
+			      {expand: true,cwd:'src/',src: ['3rd/*'], dest: 'build/'},
 			      {expand: true,cwd:'src/',src: ['game.html','home.html','recordGame.html','Serviceagreement.html','agent.html','manager.html','super.html','pokergame.html','pokerrecordgame.html'], dest: 'build/', filter: 'isFile'}
 			    ]
 			  }
